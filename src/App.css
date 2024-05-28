@@ -1,0 +1,34 @@
+#root{
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+input[type="checkbox"]{
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  font: inherit;
+  color: green;
+  width: 28px;
+  height: 28px;
+  border: 0.15em solid green;
+  border-radius: 50%;
+  transform: translateY(1px);
+  display: grid;
+  place-content: center;
+}
+input[type="checkbox"]::before{
+  content: "";
+  width: 15px;
+  height: 15px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em white;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
